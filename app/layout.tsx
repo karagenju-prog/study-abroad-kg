@@ -1,5 +1,6 @@
 import Header from "@/components/layout/Header";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Study Abroad KG",
@@ -16,6 +17,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Analytics />
       </body>
     </html>
   );
