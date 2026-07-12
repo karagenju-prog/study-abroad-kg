@@ -212,7 +212,7 @@ export default function ItalyPage() {
         <div className="italyPhotoGrid">
           <img src="/images/country/coast.jpg" alt="Sea in Italy" />
           <img src="/images/country/Streets.jpg" alt="Trevi Fountain" />
-          <img src="/images/country/venice italy.jpg" alt="Venice, Italy" />
+          <img src="/images/country/venice-italy.jpg" alt="Venice, Italy" />
         </div>
       </section>
 
