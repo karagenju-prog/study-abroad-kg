@@ -1,0 +1,3982 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: #020617;
+  color: #f8fafc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+select,
+input {
+  font-family: inherit;
+}
+
+/* HEADER */
+
+.siteHeader {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(2, 6, 23, 0.92);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.headerInner {
+  max-width: 1410px;
+  margin: 0 auto;
+  min-height: 82px;
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.brandLogo {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(96, 165, 250, 0.75), transparent 38%),
+    linear-gradient(135deg, rgba(37, 99, 235, 0.35), rgba(34, 197, 94, 0.18));
+  border: 1px solid rgba(147, 197, 253, 0.26);
+  box-shadow: 0 12px 35px rgba(37, 99, 235, 0.2);
+}
+
+.brandLogo span {
+  color: #bfdbfe;
+  font-size: 22px;
+}
+
+.brandName {
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.brandName span {
+  color: #60a5fa;
+}
+
+.brandSub {
+  margin-top: 4px;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.mainNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.navLink {
+  height: 44px;
+  padding: 0 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  border-radius: 13px;
+  background: transparent;
+  color: #cbd5e1;
+  font-size: 15px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: #60a5fa;
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.navButton {
+  appearance: none;
+}
+
+.navDropdown {
+  position: relative;
+}
+
+.chevron {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.dropdownPanel {
+  position: absolute;
+  top: 54px;
+  left: 0;
+  width: 420px;
+  padding: 18px;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #0f172a;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: 0.18s;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.navDropdown:hover .dropdownPanel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.dropdownHead h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.dropdownHead p {
+  margin: 0 0 16px;
+  color: #64748b;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.countryMenuGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.countryMenuItem {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  background: #f8fafc;
+  text-decoration: none;
+  color: #0f172a;
+  transition: 0.2s;
+}
+
+.countryMenuItem:hover {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.countryMenuItem.disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.countryFlag {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.countryMenuItem strong {
+  display: block;
+  font-size: 15px;
+}
+
+.countryMenuItem small {
+  display: block;
+  margin-top: 3px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.lockIcon {
+  margin-left: auto;
+}
+
+.searchButton {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  text-decoration: none;
+  transition: 0.2s;
+  flex-shrink: 0;
+}
+
+.searchButton:hover,
+.searchButton.active {
+  background: rgba(37, 99, 235, 0.16);
+  border-color: rgba(96, 165, 250, 0.4);
+}
+
+/* HOME */
+
+.homePage {
+  max-width: 1410px;
+  margin: 0 auto;
+  padding: 58px 36px 80px;
+  position: relative;
+}
+
+.homePage::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 74% 16%, rgba(34, 197, 94, 0.14), transparent 28%),
+    radial-gradient(circle at 63% 32%, rgba(37, 99, 235, 0.23), transparent 35%),
+    linear-gradient(180deg, #020617 0%, #020617 62%, #030712 100%);
+}
+
+.homePage::after {
+  content: "";
+  position: absolute;
+  top: 120px;
+  right: 240px;
+  width: 470px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(96, 165, 250, 0.5), transparent);
+  transform: rotate(-35deg);
+  filter: blur(1px);
+  pointer-events: none;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(560px, 1.1fr);
+  gap: 60px;
+  align-items: center;
+  min-height: 500px;
+}
+
+.heroEyebrow {
+  margin: 0 0 28px;
+  color: #60a5fa;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  margin: 0;
+  max-width: 690px;
+  font-size: 58px;
+  line-height: 1.12;
+  letter-spacing: -0.055em;
+  font-weight: 900;
+}
+
+.heroTitle span {
+  color: #86efac;
+}
+
+.heroText {
+  margin: 24px 0 0;
+  color: #cbd5e1;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.heroText span {
+  color: #93c5fd;
+  font-weight: 900;
+}
+
+.heroNote {
+  margin: 10px 0 0;
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.primaryButton {
+  margin-top: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 24px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+  box-shadow: 0 20px 55px rgba(37, 99, 235, 0.34);
+}
+
+.heroRight {
+  position: relative;
+  min-height: 450px;
+  display: grid;
+  grid-template-columns: 0.86fr 1.14fr;
+  grid-template-rows: auto auto;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.pathwayCard {
+  grid-row: 1 / 3;
+  padding: 28px;
+  border-radius: 22px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(15, 23, 42, 0.68);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.23);
+}
+
+.pathwayCard h2 {
+  margin: 0 0 24px;
+  font-size: 27px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.pathwaySteps {
+  display: grid;
+  gap: 20px;
+}
+
+.pathwayStep {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.stepIcon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: rgba(37, 99, 235, 0.16);
+}
+
+.pathwayStep p {
+  margin: 0;
+  color: #d1d5db;
+  line-height: 1.45;
+}
+
+.greenScholarshipCard {
+  min-height: 170px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(34, 197, 94, 0.24), transparent 40%),
+    rgba(5, 46, 22, 0.78);
+  border: 1px solid rgba(34, 197, 94, 0.42);
+  text-decoration: none;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+}
+
+.greenScholarshipCard p {
+  margin: 0 0 12px;
+  color: #86efac;
+  font-weight: 900;
+  font-size: 14px;
+}
+
+.greenScholarshipCard h3 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  letter-spacing: -0.03em;
+}
+
+.greenScholarshipCard small {
+  color: #bbf7d0;
+  line-height: 1.5;
+}
+
+.greenIcon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: rgba(34, 197, 94, 0.2);
+}
+
+.heroPhotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.heroPhoto {
+  min-height: 180px;
+  border-radius: 22px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.28);
+}
+
+.photoLibrary {
+  grid-column: 1 / 3;
+  background-image:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.06), rgba(2, 6, 23, 0.2)),
+    url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1000&q=80");
+}
+
+.photoStudents {
+  background-image:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.06), rgba(2, 6, 23, 0.2)),
+    url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80");
+}
+
+.photoGraduation {
+  background-image:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.06), rgba(2, 6, 23, 0.2)),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80");
+}
+
+/* COUNTRY / UNIVERSITIES */
+
+.countrySection {
+  margin-top: 48px;
+  padding: 30px;
+  border-radius: 28px;
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  background: rgba(2, 6, 23, 0.28);
+}
+
+.countrySectionTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.countrySectionTop h2 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: -0.04em;
+}
+
+.countrySectionTop p {
+  margin: 8px 0 0;
+  color: #94a3b8;
+}
+
+.countryNotice {
+  min-width: 360px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.countryNotice p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.countryTabs {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.countryTab {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 22px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  background: rgba(15, 23, 42, 0.58);
+  color: #cbd5e1;
+  font-weight: 800;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.countryTab:hover {
+  border-color: rgba(96, 165, 250, 0.4);
+}
+
+.countryTab.active {
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  border-color: rgba(96, 165, 250, 0.55);
+}
+
+.countryTab.locked {
+  opacity: 0.58;
+}
+
+.countryTab small {
+  margin-left: auto;
+}
+
+.universityCards {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.universityCard {
+  min-height: 250px;
+  padding: 22px;
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  background: rgba(15, 23, 42, 0.68);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.universityCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(96, 165, 250, 0.45);
+  background: rgba(15, 23, 42, 0.92);
+}
+
+.universityLogo {
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.universityCard h3 {
+  margin: 0 0 12px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.universityCard p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.universityCard span {
+  display: inline-flex;
+  margin-top: 22px;
+  color: #60a5fa;
+  font-weight: 900;
+}
+
+.comingSoonBox {
+  margin-top: 18px;
+  padding: 26px;
+  border-radius: 20px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  background: rgba(15, 23, 42, 0.62);
+}
+
+.comingSoonBox h3 {
+  margin-top: 0;
+  font-size: 24px;
+}
+
+.comingSoonBox p {
+  color: #cbd5e1;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.countrySliderDots {
+  margin: 26px auto 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.countrySliderDots span {
+  width: 54px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.24);
+}
+
+.countrySliderDots span.active {
+  background: #3b82f6;
+}
+
+/* DEFAULT PAGE CONTAINER */
+
+body > main:not(.homePage) {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 46px 28px 80px;
+}
+
+/* START PAGE */
+
+.startPage {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 46px 28px 80px;
+}
+
+.startContainer {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.startEyebrow {
+  margin: 0 0 12px;
+  color: #60a5fa;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.startPage select {
+  background: #020617 !important;
+  color: #f8fafc !important;
+}
+
+.startPage option {
+  background: #020617;
+  color: #f8fafc;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1180px) {
+  .mainNav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .heroRight {
+    grid-template-columns: 1fr;
+  }
+
+  .pathwayCard {
+    grid-row: auto;
+  }
+
+  .countryTabs,
+  .universityCards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .countrySectionTop {
+    flex-direction: column;
+  }
+
+  .countryNotice {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .headerInner {
+    padding: 0 18px;
+  }
+
+  .brandSub {
+    display: none;
+  }
+
+  .homePage {
+    padding: 34px 18px 56px;
+  }
+
+  .heroTitle {
+    font-size: 42px;
+  }
+
+  .heroText {
+    font-size: 17px;
+  }
+
+  .heroPhotos {
+    grid-template-columns: 1fr;
+  }
+
+  .photoLibrary {
+    grid-column: auto;
+  }
+
+  .countryTabs,
+  .universityCards {
+    grid-template-columns: 1fr;
+  }
+
+  .countrySection {
+    padding: 20px;
+  }
+}
+/* =========================
+   FIX: COUNTRY DROPDOWN + HERO PHOTOS
+========================= */
+
+/* чтобы dropdown не исчезал, когда ведёшь мышку вниз */
+.navDropdown {
+  position: relative;
+}
+
+/* невидимый мост между кнопкой и dropdown */
+.navDropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 40px;
+  width: 460px;
+  height: 22px;
+  background: transparent;
+}
+
+/* dropdown чуть ближе к кнопке */
+.dropdownPanel {
+  top: 48px !important;
+  z-index: 999 !important;
+}
+
+/* меню остаётся открытым, когда курсор уже на самом меню */
+.navDropdown:hover .dropdownPanel,
+.dropdownPanel:hover {
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  transform: translateY(0) !important;
+}
+
+/* чтобы кнопка "Страны" выглядела активной при открытом меню */
+.navDropdown:hover .navLink {
+  color: #60a5fa !important;
+  background: rgba(37, 99, 235, 0.1) !important;
+}
+
+/* исправляем правый блок с фото */
+.heroPhotos {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 18px !important;
+}
+
+.heroPhoto {
+  min-height: 180px !important;
+  border-radius: 22px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border: 1px solid rgba(148, 163, 184, 0.14) !important;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.28) !important;
+}
+
+.photoLibrary {
+  grid-column: 1 / 3 !important;
+  background-image:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.06), rgba(2, 6, 23, 0.2)),
+    url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1000&q=80") !important;
+}
+
+.photoStudents {
+  background-image:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.06), rgba(2, 6, 23, 0.2)),
+    url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80") !important;
+}
+
+/* это была пустая картинка — теперь будет фото выпускников */
+.photoGraduation {
+  background-image:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.06), rgba(2, 6, 23, 0.2)),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80") !important;
+}
+/* FIX EMPTY THIRD PHOTO */
+
+.heroPhotos .photoGraduation {
+  display: block !important;
+  min-height: 180px !important;
+  border-radius: 22px !important;
+  background-image:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.05), rgba(2, 6, 23, 0.22)),
+    url("https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=80") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid rgba(148, 163, 184, 0.14) !important;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.28) !important;
+}
+
+/* если картинка всё равно не загрузится, хотя бы будет красивый фон */
+.heroPhotos .photoGraduation::before {
+  content: "🎓";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 180px;
+  font-size: 42px;
+  background: radial-gradient(circle at 50% 30%, rgba(37, 99, 235, 0.25), rgba(15, 23, 42, 0.8));
+  border-radius: 22px;
+}
+/* =========================
+   HERO: STUDENT CENTER + RIGHT PATHWAY
+========================= */
+
+/* новая сетка hero */
+.heroStudentLayout {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.9fr) minmax(330px, 0.78fr) minmax(340px, 0.62fr) !important;
+  gap: 34px !important;
+  align-items: center !important;
+  min-height: 560px !important;
+}
+
+/* убираем старые правые блоки */
+.heroRight,
+.pathwayCard,
+.greenScholarshipCard,
+.heroPhotos,
+.heroPhoto,
+.photoLibrary,
+.photoStudents,
+.photoGraduation,
+.heroImageShowcase,
+.heroImageOverlay,
+.heroRightClean,
+.rightScholarshipCard,
+.heroPhotoLarge,
+.heroPhotoStack,
+.heroSmallPhoto {
+  display: none !important;
+}
+
+/* центральная зона со студентом */
+.heroStudentArea {
+  position: relative !important;
+  min-height: 520px !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+}
+
+.studentShape {
+  position: absolute !important;
+  right: 8px !important;
+  bottom: 12px !important;
+  width: 92% !important;
+  height: 82% !important;
+  border-radius: 46% 54% 38% 62% / 46% 38% 62% 54% !important;
+  background:
+    radial-gradient(circle at 70% 18%, rgba(134, 239, 172, 0.22), transparent 28%),
+    linear-gradient(135deg, rgba(20, 184, 166, 0.55), rgba(37, 99, 235, 0.28)) !important;
+  opacity: 0.92 !important;
+  filter: blur(0px) !important;
+  box-shadow:
+    0 40px 100px rgba(37, 99, 235, 0.18),
+    inset 0 0 80px rgba(255, 255, 255, 0.06) !important;
+  z-index: 1 !important;
+}
+
+.studentImage {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 92% !important;
+  height: 500px !important;
+  border-radius: 34px !important;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(2, 6, 23, 0) 0%,
+      rgba(2, 6, 23, 0.02) 52%,
+      rgba(2, 6, 23, 0.85) 100%
+    ),
+    url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1100&q=85") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border: 1px solid rgba(148, 163, 184, 0.12) !important;
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.32) !important;
+  overflow: hidden !important;
+}
+
+/* мягкое затемнение снизу, чтобы фото сливалось с фоном */
+.studentImage::after {
+  content: "" !important;
+  position: absolute !important;
+  left: -2px !important;
+  right: -2px !important;
+  bottom: -2px !important;
+  height: 42% !important;
+  background: linear-gradient(180deg, transparent, #020617 84%) !important;
+  pointer-events: none !important;
+}
+
+.studentFloatingCard {
+  position: absolute !important;
+  left: 18px !important;
+  bottom: 34px !important;
+  z-index: 3 !important;
+  max-width: 260px !important;
+  padding: 15px 16px !important;
+  border-radius: 18px !important;
+  background: rgba(2, 6, 23, 0.72) !important;
+  border: 1px solid rgba(148, 163, 184, 0.16) !important;
+  backdrop-filter: blur(14px) !important;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25) !important;
+}
+
+.studentFloatingCard strong {
+  display: block !important;
+  color: #f8fafc !important;
+  font-size: 15px !important;
+  margin-bottom: 5px !important;
+}
+
+.studentFloatingCard span {
+  color: #94a3b8 !important;
+  font-size: 13px !important;
+}
+
+/* правая инструкция */
+.heroPathwaySide {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  align-self: center !important;
+}
+
+.pathwayPanel {
+  padding: 24px !important;
+  border-radius: 24px !important;
+  background: rgba(15, 23, 42, 0.7) !important;
+  border: 1px solid rgba(148, 163, 184, 0.15) !important;
+  box-shadow: 0 28px 75px rgba(0, 0, 0, 0.28) !important;
+}
+
+.pathwayLabel {
+  margin: 0 0 8px !important;
+  color: #93c5fd !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+}
+
+.pathwayPanel h2 {
+  margin: 0 0 20px !important;
+  font-size: 28px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.pathwayList {
+  display: grid !important;
+  gap: 14px !important;
+}
+
+.pathwayRow {
+  display: grid !important;
+  grid-template-columns: 44px 1fr !important;
+  gap: 13px !important;
+  align-items: flex-start !important;
+}
+
+.pathwayNumber {
+  width: 44px !important;
+  height: 44px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 14px !important;
+  background: rgba(37, 99, 235, 0.18) !important;
+  color: #93c5fd !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+  border: 1px solid rgba(96, 165, 250, 0.18) !important;
+}
+
+.pathwayRow h3 {
+  margin: 0 0 4px !important;
+  font-size: 16px !important;
+  line-height: 1.3 !important;
+}
+
+.pathwayRow p {
+  margin: 0 !important;
+  color: #94a3b8 !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+}
+
+/* маленькая реклама стипендии под инструкцией */
+.miniScholarship {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 16px !important;
+  padding: 18px 20px !important;
+  border-radius: 22px !important;
+  text-decoration: none !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(34, 197, 94, 0.18), transparent 40%),
+    rgba(5, 46, 22, 0.78) !important;
+  border: 1px solid rgba(34, 197, 94, 0.34) !important;
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.24) !important;
+}
+
+.miniScholarship p {
+  margin: 0 0 5px !important;
+  color: #86efac !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+}
+
+.miniScholarship h3 {
+  margin: 0 0 6px !important;
+  font-size: 24px !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
+}
+
+.miniScholarship span {
+  display: block !important;
+  color: #bbf7d0 !important;
+  font-size: 13px !important;
+  line-height: 1.45 !important;
+}
+
+.miniScholarship strong {
+  width: 36px !important;
+  height: 36px !important;
+  display: grid !important;
+  place-items: center !important;
+  flex-shrink: 0 !important;
+  border-radius: 999px !important;
+  color: #86efac !important;
+  background: rgba(34, 197, 94, 0.14) !important;
+}
+
+/* чтобы заголовок слева не был слишком огромным на 3 колонки */
+.heroStudentLayout .heroTitle {
+  max-width: 660px !important;
+  font-size: 54px !important;
+  line-height: 1.1 !important;
+}
+
+.heroStudentLayout .heroText {
+  max-width: 600px !important;
+}
+
+/* responsive */
+@media (max-width: 1250px) {
+  .heroStudentLayout {
+    grid-template-columns: 1fr !important;
+    gap: 34px !important;
+  }
+
+  .heroStudentArea {
+    min-height: 440px !important;
+  }
+
+  .studentImage {
+    height: 430px !important;
+    width: 100% !important;
+  }
+
+  .studentShape {
+    width: 78% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .heroStudentLayout .heroTitle {
+    font-size: 42px !important;
+  }
+
+  .heroStudentArea {
+    min-height: 360px !important;
+  }
+
+  .studentImage {
+    height: 340px !important;
+  }
+
+  .pathwayPanel {
+    padding: 20px !important;
+  }
+
+  .pathwayPanel h2 {
+    font-size: 24px !important;
+  }
+}
+/* =========================
+   FIX HERO: CENTER STUDENT + SIMPLE PATHWAY
+========================= */
+
+/* hero: слева текст, по центру студент, справа инструкция */
+.heroStudentLayout {
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.78fr) minmax(330px, 0.62fr) !important;
+  gap: 38px !important;
+  align-items: center !important;
+}
+
+/* убираем купол */
+.studentShape {
+  display: none !important;
+}
+
+/* центральная область */
+.heroStudentArea {
+  position: relative !important;
+  min-height: 520px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* вместо купола — одна гармоничная картинка */
+.studentImage {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  max-width: 430px !important;
+  height: 500px !important;
+  border-radius: 38px !important;
+  overflow: hidden !important;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(2, 6, 23, 0.18) 0%,
+      rgba(2, 6, 23, 0.02) 45%,
+      rgba(2, 6, 23, 0.12) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2, 6, 23, 0.02) 0%,
+      rgba(2, 6, 23, 0.12) 55%,
+      #020617 100%
+    ),
+    url("https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1000&q=85") !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  border: 1px solid rgba(148, 163, 184, 0.14) !important;
+  box-shadow:
+    0 35px 90px rgba(0, 0, 0, 0.34),
+    0 0 90px rgba(37, 99, 235, 0.16) !important;
+}
+
+/* мягкий цветной фон за человеком, как на education.com, но в нашем стиле */
+.studentImage::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 42px 18px 44px 18px !important;
+  z-index: -1 !important;
+  border-radius: 48% 52% 42% 58% / 48% 42% 58% 52% !important;
+  background: linear-gradient(135deg, rgba(20, 184, 166, 0.72), rgba(37, 99, 235, 0.34)) !important;
+}
+
+/* затемнение снизу, чтобы картинка не выглядела как отдельная фотка */
+.studentImage::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  height: 42% !important;
+  background: linear-gradient(180deg, transparent, #020617 90%) !important;
+  pointer-events: none !important;
+}
+
+/* маленькая карточка на фото */
+.studentFloatingCard {
+  left: 24px !important;
+  bottom: 34px !important;
+  max-width: 250px !important;
+  padding: 14px 16px !important;
+  border-radius: 18px !important;
+  background: rgba(2, 6, 23, 0.74) !important;
+  border: 1px solid rgba(148, 163, 184, 0.16) !important;
+  backdrop-filter: blur(14px) !important;
+}
+
+/* правая колонка */
+.heroPathwaySide {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  align-self: center !important;
+}
+
+/* инструкция справа */
+.pathwayPanel {
+  padding: 24px !important;
+  border-radius: 24px !important;
+  background: rgba(15, 23, 42, 0.74) !important;
+  border: 1px solid rgba(148, 163, 184, 0.15) !important;
+  box-shadow: 0 28px 75px rgba(0, 0, 0, 0.28) !important;
+}
+
+.pathwayLabel {
+  margin: 0 0 8px !important;
+  color: #93c5fd !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+}
+
+.pathwayPanel h2 {
+  margin: 0 0 22px !important;
+  font-size: 30px !important;
+  line-height: 1.14 !important;
+  letter-spacing: -0.04em !important;
+}
+
+/* список инструкции как раньше: иконка + короткая фраза */
+.pathwayList {
+  display: grid !important;
+  gap: 18px !important;
+}
+
+.pathwayRow {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+
+.pathwayIcon {
+  width: 44px !important;
+  height: 44px !important;
+  display: grid !important;
+  place-items: center !important;
+  flex-shrink: 0 !important;
+  border-radius: 14px !important;
+  background: rgba(37, 99, 235, 0.18) !important;
+  border: 1px solid rgba(96, 165, 250, 0.18) !important;
+  font-size: 19px !important;
+}
+
+.pathwayRow p {
+  margin: 0 !important;
+  color: #f8fafc !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+}
+
+/* выключаем старый numbered style, если остался */
+.pathwayNumber {
+  display: none !important;
+}
+
+.pathwayRow h3 {
+  display: none !important;
+}
+
+/* маленькая карточка стипендии под инструкцией */
+.miniScholarship {
+  padding: 16px 18px !important;
+  border-radius: 20px !important;
+  min-height: auto !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(34, 197, 94, 0.18), transparent 40%),
+    rgba(5, 46, 22, 0.78) !important;
+  border: 1px solid rgba(34, 197, 94, 0.34) !important;
+}
+
+.miniScholarship p {
+  margin: 0 0 4px !important;
+  color: #86efac !important;
+  font-size: 13px !important;
+  font-weight: 900 !important;
+}
+
+.miniScholarship h3 {
+  margin: 0 0 5px !important;
+  font-size: 23px !important;
+  line-height: 1.15 !important;
+}
+
+.miniScholarship span {
+  color: #bbf7d0 !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+/* убираем старые фото-блоки, если где-то остались */
+.heroRight,
+.pathwayCard,
+.greenScholarshipCard,
+.heroPhotos,
+.heroPhoto,
+.photoLibrary,
+.photoStudents,
+.photoGraduation,
+.heroImageShowcase,
+.heroImageOverlay,
+.heroRightClean,
+.rightScholarshipCard,
+.heroPhotoLarge,
+.heroPhotoStack,
+.heroSmallPhoto {
+  display: none !important;
+}
+
+/* адаптив */
+@media (max-width: 1250px) {
+  .heroStudentLayout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .heroStudentArea {
+    min-height: 430px !important;
+  }
+
+  .studentImage {
+    max-width: 520px !important;
+    height: 430px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .studentImage {
+    height: 340px !important;
+  }
+
+  .pathwayPanel h2 {
+    font-size: 24px !important;
+  }
+}
+/* =========================
+   CENTER GLOBE VISUAL
+========================= */
+
+/* hero: слева текст, центр globe, справа инструкция */
+.heroStudentLayout {
+  grid-template-columns: minmax(0, 0.9fr) minmax(390px, 0.85fr) minmax(330px, 0.62fr) !important;
+  gap: 38px !important;
+  align-items: center !important;
+}
+
+/* убираем старую фотку/студента */
+.heroStudentArea,
+.studentShape,
+.studentImage,
+.studentFloatingCard {
+  display: none !important;
+}
+
+/* центральная зона */
+.heroGlobeArea {
+  position: relative !important;
+  min-height: 520px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* общий блок визуала */
+.globeVisual {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 480px !important;
+  height: 500px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* мягкий фон за глобусом */
+.globeVisual::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 22px !important;
+  border-radius: 34px !important;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(37, 99, 235, 0.28), transparent 38%),
+    radial-gradient(circle at 62% 28%, rgba(34, 197, 94, 0.14), transparent 34%),
+    rgba(15, 23, 42, 0.24) !important;
+  border: 1px solid rgba(148, 163, 184, 0.08) !important;
+  box-shadow:
+    inset 0 0 80px rgba(37, 99, 235, 0.1),
+    0 30px 100px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* вертикальные линии как digital background */
+.globeVisual::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(96, 165, 250, 0.1) 50%, transparent 100%),
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 72px,
+      rgba(96, 165, 250, 0.06) 73px,
+      transparent 74px
+    ) !important;
+  opacity: 0.55 !important;
+  pointer-events: none !important;
+}
+
+/* сам глобус */
+.globeCore {
+  position: relative !important;
+  width: 270px !important;
+  height: 270px !important;
+  border-radius: 999px !important;
+  z-index: 2 !important;
+  background:
+    radial-gradient(circle at 35% 28%, rgba(147, 197, 253, 0.9), rgba(37, 99, 235, 0.55) 32%, rgba(15, 23, 42, 0.92) 78%),
+    radial-gradient(circle at 70% 70%, rgba(34, 197, 94, 0.18), transparent 36%) !important;
+  border: 1px solid rgba(96, 165, 250, 0.28) !important;
+  box-shadow:
+    0 0 45px rgba(37, 99, 235, 0.46),
+    inset -32px -28px 70px rgba(2, 6, 23, 0.72),
+    inset 20px 18px 45px rgba(147, 197, 253, 0.12) !important;
+  overflow: visible !important;
+}
+
+/* имитация карты/точек на глобусе */
+.globeMap {
+  position: absolute !important;
+  inset: 22px !important;
+  border-radius: 999px !important;
+  background-image:
+    radial-gradient(circle, rgba(191, 219, 254, 0.72) 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(34, 197, 94, 0.42) 1px, transparent 1.8px) !important;
+  background-size: 13px 13px, 19px 19px !important;
+  background-position: 0 0, 6px 8px !important;
+  opacity: 0.52 !important;
+  mask-image: radial-gradient(circle, black 58%, transparent 72%) !important;
+}
+
+/* орбиты */
+.orbit {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 380px !important;
+  height: 115px !important;
+  border-radius: 999px !important;
+  border: 2px solid rgba(56, 189, 248, 0.42) !important;
+  transform: translate(-50%, -50%) rotate(-12deg) !important;
+  box-shadow: 0 0 24px rgba(56, 189, 248, 0.22) !important;
+}
+
+.orbitOne {
+  transform: translate(-50%, -50%) rotate(-12deg) !important;
+}
+
+.orbitTwo {
+  width: 360px !important;
+  height: 92px !important;
+  transform: translate(-50%, -50%) rotate(18deg) !important;
+  border-color: rgba(96, 165, 250, 0.28) !important;
+}
+
+.orbitThree {
+  width: 330px !important;
+  height: 78px !important;
+  transform: translate(-50%, -50%) rotate(48deg) !important;
+  border-color: rgba(34, 197, 94, 0.2) !important;
+}
+
+/* светящиеся точки */
+.globeNode {
+  position: absolute !important;
+  z-index: 4 !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 999px !important;
+  background: #67e8f9 !important;
+  box-shadow:
+    0 0 16px rgba(103, 232, 249, 0.9),
+    0 0 34px rgba(37, 99, 235, 0.55) !important;
+}
+
+.nodeOne {
+  left: 49% !important;
+  top: 29% !important;
+}
+
+.nodeTwo {
+  left: 48% !important;
+  bottom: 22% !important;
+}
+
+.nodeThree {
+  right: 23% !important;
+  top: 43% !important;
+}
+
+/* карточки вокруг глобуса */
+.floatingFeature {
+  position: absolute !important;
+  z-index: 5 !important;
+  width: 104px !important;
+  height: 94px !important;
+  padding: 12px !important;
+  border-radius: 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  background: rgba(15, 23, 42, 0.72) !important;
+  border: 1px solid rgba(56, 189, 248, 0.32) !important;
+  box-shadow:
+    0 20px 55px rgba(0, 0, 0, 0.26),
+    0 0 35px rgba(56, 189, 248, 0.14) !important;
+  backdrop-filter: blur(14px) !important;
+}
+
+.floatingFeature span {
+  color: #cbd5e1 !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  text-align: center !important;
+}
+
+.featureIcon {
+  width: 42px !important;
+  height: 42px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 14px !important;
+  background: rgba(37, 99, 235, 0.22) !important;
+  color: #bfdbfe !important;
+  font-size: 22px !important;
+}
+
+/* позиции карточек */
+.featureUniversities {
+  left: 20px !important;
+  top: 74px !important;
+}
+
+.featureDocuments {
+  right: 20px !important;
+  top: 60px !important;
+}
+
+.featureScholarships {
+  left: 20px !important;
+  bottom: 72px !important;
+}
+
+.featureCountries {
+  right: 34px !important;
+  bottom: 62px !important;
+}
+
+/* правая инструкция остаётся как простая версия */
+.pathwayList {
+  display: grid !important;
+  gap: 18px !important;
+}
+
+.pathwayRow {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+
+.pathwayIcon {
+  width: 44px !important;
+  height: 44px !important;
+  display: grid !important;
+  place-items: center !important;
+  flex-shrink: 0 !important;
+  border-radius: 14px !important;
+  background: rgba(37, 99, 235, 0.18) !important;
+  border: 1px solid rgba(96, 165, 250, 0.18) !important;
+  font-size: 19px !important;
+}
+
+.pathwayRow p {
+  margin: 0 !important;
+  color: #f8fafc !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+}
+
+.pathwayNumber,
+.pathwayRow h3 {
+  display: none !important;
+}
+
+/* адаптив */
+@media (max-width: 1250px) {
+  .heroStudentLayout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .heroGlobeArea {
+    min-height: 470px !important;
+  }
+
+  .globeVisual {
+    max-width: 560px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .heroGlobeArea {
+    min-height: 400px !important;
+  }
+
+  .globeCore {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  .floatingFeature {
+    width: 92px !important;
+    height: 82px !important;
+  }
+}
+/* CENTER IMAGE FROM GENERATED MOCKUP */
+
+.heroGlobeArea,
+.globeVisual,
+.globeCore,
+.globeMap,
+.orbit,
+.globeNode,
+.floatingFeature,
+.heroStudentArea,
+.studentShape,
+.studentImage,
+.studentFloatingCard {
+  display: none !important;
+}
+
+.heroCenterVisual {
+  min-height: 560px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+}
+
+.heroCenterImage {
+  width: 100% !important;
+  max-width: 560px !important;
+  height: 560px !important;
+  background-image: url("/hero-center.png") !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  filter: drop-shadow(0 35px 80px rgba(37, 99, 235, 0.22)) !important;
+}
+/* =========================
+   MAKE CENTER IMAGE BLEND WITH BACKGROUND
+========================= */
+
+.heroCenterVisual {
+  position: relative !important;
+  min-height: 560px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+}
+
+/* мягкое свечение вокруг картинки */
+.heroCenterVisual::before {
+  content: "" !important;
+  position: absolute !important;
+  width: 620px !important;
+  height: 620px !important;
+  border-radius: 999px !important;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(37, 99, 235, 0.28), transparent 46%),
+    radial-gradient(circle at 58% 38%, rgba(34, 211, 238, 0.16), transparent 38%),
+    radial-gradient(circle at 50% 60%, rgba(2, 6, 23, 0.1), transparent 58%) !important;
+  filter: blur(18px) !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+/* сама картинка теперь без жесткого прямоугольника */
+.heroCenterImage {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 620px !important;
+  height: 620px !important;
+  background-image: url("/hero-center.png") !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+
+  /* главное: края плавно исчезают */
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 0%,
+      black 48%,
+      rgba(0, 0, 0, 0.88) 58%,
+      rgba(0, 0, 0, 0.45) 72%,
+      transparent 88%
+    ) !important;
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 0%,
+      black 48%,
+      rgba(0, 0, 0, 0.88) 58%,
+      rgba(0, 0, 0, 0.45) 72%,
+      transparent 88%
+    ) !important;
+
+  filter:
+    drop-shadow(0 0 34px rgba(37, 99, 235, 0.34))
+    drop-shadow(0 28px 80px rgba(0, 0, 0, 0.34)) !important;
+
+  opacity: 0.96 !important;
+}
+
+/* убираем любые старые рамки/фоны вокруг центрального визуала */
+.heroCenterVisualFrame {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+/* если у тебя остались старые globe blocks — выключаем */
+.heroGlobeArea,
+.globeVisual,
+.globeCore,
+.globeMap,
+.orbit,
+.globeNode,
+.floatingFeature,
+.heroStudentArea,
+.studentShape,
+.studentImage,
+.studentFloatingCard {
+  display: none !important;
+}
+
+/* чуть лучше балансируем три колонки */
+.heroStudentLayout {
+  grid-template-columns: minmax(0, 0.9fr) minmax(470px, 0.82fr) minmax(330px, 0.62fr) !important;
+  gap: 26px !important;
+  align-items: center !important;
+}
+
+/* адаптив */
+@media (max-width: 1250px) {
+  .heroStudentLayout {
+    grid-template-columns: 1fr !important;
+  }
+
+  .heroCenterVisual {
+    min-height: 460px !important;
+  }
+
+  .heroCenterImage {
+    width: 520px !important;
+    height: 520px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .heroCenterVisual {
+    min-height: 360px !important;
+  }
+
+  .heroCenterImage {
+    width: 360px !important;
+    height: 360px !important;
+  }
+}
+/* =========================
+   FIX: SHARP CENTER IMAGE, SOFT EDGES
+========================= */
+
+.heroCenterVisual {
+  position: relative !important;
+  min-height: 560px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: visible !important;
+}
+
+/* мягкое свечение, но не мутное */
+.heroCenterVisual::before {
+  content: "" !important;
+  position: absolute !important;
+  width: 640px !important;
+  height: 600px !important;
+  border-radius: 999px !important;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(37, 99, 235, 0.18), transparent 48%),
+    radial-gradient(circle at 55% 42%, rgba(56, 189, 248, 0.12), transparent 40%) !important;
+  filter: blur(14px) !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+}
+
+/* картинка снова яркая и читаемая */
+.heroCenterImage {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 620px !important;
+  height: 580px !important;
+  background-image: url("/hero-center.png") !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+
+  /* края растворяются, но центр остаётся чётким */
+  -webkit-mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 0%,
+      black 58%,
+      rgba(0, 0, 0, 0.82) 68%,
+      rgba(0, 0, 0, 0.28) 82%,
+      transparent 94%
+    ) !important;
+
+  mask-image:
+    radial-gradient(
+      ellipse at center,
+      black 0%,
+      black 58%,
+      rgba(0, 0, 0, 0.82) 68%,
+      rgba(0, 0, 0, 0.28) 82%,
+      transparent 94%
+    ) !important;
+
+  filter:
+    contrast(1.08)
+    saturate(1.08)
+    brightness(1.03)
+    drop-shadow(0 0 24px rgba(56, 189, 248, 0.28))
+    drop-shadow(0 22px 60px rgba(0, 0, 0, 0.32)) !important;
+}
+
+/* убираем тяжёлый overlay, который делал мутно */
+.heroCenterVisual::after {
+  content: "" !important;
+  position: absolute !important;
+  z-index: 3 !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background:
+    linear-gradient(
+      90deg,
+      #020617 0%,
+      rgba(2, 6, 23, 0.38) 8%,
+      rgba(2, 6, 23, 0) 22%,
+      rgba(2, 6, 23, 0) 78%,
+      rgba(2, 6, 23, 0.36) 92%,
+      #020617 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2, 6, 23, 0.72) 0%,
+      rgba(2, 6, 23, 0) 13%,
+      rgba(2, 6, 23, 0) 84%,
+      rgba(2, 6, 23, 0.76) 100%
+    ) !important;
+}
+
+/* убираем рамки, если остались */
+.heroCenterVisualFrame {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+/* =========================
+   CLEAN UNIVERSITY CARDS
+========================= */
+
+.cleanUniversityCard {
+  min-height: 240px !important;
+  padding: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  gap: 22px !important;
+  border-radius: 22px !important;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.12), transparent 34%),
+    rgba(15, 23, 42, 0.72) !important;
+  border: 1px solid rgba(148, 163, 184, 0.14) !important;
+  text-decoration: none !important;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease,
+    box-shadow 0.22s ease !important;
+}
+
+.cleanUniversityCard:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(96, 165, 250, 0.45) !important;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.2), transparent 38%),
+    rgba(15, 23, 42, 0.92) !important;
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.28) !important;
+}
+
+.universityLogoBox {
+  width: 72px !important;
+  height: 72px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 22px !important;
+  background:
+    linear-gradient(135deg, rgba(239, 246, 255, 0.96), rgba(219, 234, 254, 0.92)) !important;
+  border: 1px solid rgba(191, 219, 254, 0.9) !important;
+  box-shadow:
+    0 16px 35px rgba(37, 99, 235, 0.16),
+    inset 0 0 20px rgba(255, 255, 255, 0.55) !important;
+  overflow: hidden !important;
+}
+
+.universityLogoBox span {
+  color: #1d4ed8 !important;
+  font-size: 22px !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.universityLogoBox img {
+  width: 78% !important;
+  height: 78% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.universityShort {
+  margin: 0 0 8px !important;
+  color: #60a5fa !important;
+  font-size: 14px !important;
+  font-weight: 900 !important;
+}
+
+.cleanUniversityCard h3 {
+  margin: 0 !important;
+  color: #f8fafc !important;
+  font-size: 22px !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.cleanUniversityCard p:not(.universityShort) {
+  display: none !important;
+}
+
+.universityCardFooter {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  padding-top: 18px !important;
+  border-top: 1px solid rgba(148, 163, 184, 0.12) !important;
+}
+
+.universityCardFooter span {
+  margin: 0 !important;
+  color: #93c5fd !important;
+  font-size: 15px !important;
+  font-weight: 900 !important;
+}
+
+.universityCardFooter strong {
+  width: 34px !important;
+  height: 34px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 999px !important;
+  background: rgba(37, 99, 235, 0.16) !important;
+  color: #93c5fd !important;
+  font-size: 18px !important;
+  transition: 0.22s ease !important;
+}
+
+.cleanUniversityCard:hover .universityCardFooter strong {
+  transform: translateX(4px) !important;
+  background: rgba(37, 99, 235, 0.28) !important;
+}
+
+/* если старый стиль логотипа мешает */
+.cleanUniversityCard .universityLogo {
+  display: none !important;
+}
+/* =========================
+   UNIVERSITY LOGO CARDS ONLY
+========================= */
+
+.logoUniversityGrid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+
+.universityLogoCard {
+  min-height: 210px !important;
+  padding: 28px 22px !important;
+  border-radius: 24px !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.16), transparent 42%),
+    rgba(15, 23, 42, 0.72) !important;
+  border: 1px solid rgba(148, 163, 184, 0.14) !important;
+  text-decoration: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 22px !important;
+  text-align: center !important;
+  transition:
+    transform 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease,
+    box-shadow 0.22s ease !important;
+}
+
+.universityLogoCard:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(96, 165, 250, 0.48) !important;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.26), transparent 45%),
+    rgba(15, 23, 42, 0.94) !important;
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.3),
+    0 0 45px rgba(37, 99, 235, 0.12) !important;
+}
+
+.universityLogoCard .universityLogoBox {
+  width: 92px !important;
+  height: 92px !important;
+  border-radius: 28px !important;
+  display: grid !important;
+  place-items: center !important;
+  background:
+    linear-gradient(135deg, rgba(239, 246, 255, 0.98), rgba(219, 234, 254, 0.94)) !important;
+  border: 1px solid rgba(191, 219, 254, 0.9) !important;
+  box-shadow:
+    0 18px 40px rgba(37, 99, 235, 0.18),
+    inset 0 0 24px rgba(255, 255, 255, 0.6) !important;
+  overflow: hidden !important;
+}
+
+.universityLogoCard .universityLogoBox span {
+  color: #1d4ed8 !important;
+  font-size: 27px !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.universityLogoCard .universityLogoBox img {
+  width: 78% !important;
+  height: 78% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.universityLogoCard h3 {
+  margin: 0 !important;
+  max-width: 230px !important;
+  color: #f8fafc !important;
+  font-size: 20px !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.035em !important;
+}
+
+/* жёстко убираем старые описания и футеры */
+.universityLogoCard p,
+.universityLogoCard .universityShort,
+.universityLogoCard .universityCardFooter,
+.cleanUniversityCard p,
+.cleanUniversityCard .universityCardFooter,
+.cleanUniversityCard .universityShort {
+  display: none !important;
+}
+
+/* если старые карточки ещё где-то перебивают */
+.cleanUniversityCard {
+  min-height: unset !important;
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+  .logoUniversityGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .logoUniversityGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .universityLogoCard {
+    min-height: 190px !important;
+  }
+}
+/* Bigger real logos inside university cards */
+
+.universityLogoBox {
+  width: 128px !important;
+  height: 112px !important;
+  padding: 8px !important;
+}
+
+.universityLogoImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* For seal-style logos like Sapienza */
+.universityLogoImage.logoSeal {
+  transform: scale(1.45) !important;
+}
+
+.universityLogoImage.largeSeal {
+  transform: scale(1.9) !important;
+}
+/* =========================
+   HEADER — FINAL CLICK MENU VERSION
+========================= */
+
+.siteHeader {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 900 !important;
+  width: 100% !important;
+  background: rgba(2, 6, 23, 0.9) !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1) !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+.headerInner {
+  width: min(100%, 1420px) !important;
+  margin: 0 auto !important;
+  padding: 18px 28px !important;
+  display: grid !important;
+  grid-template-columns: auto 1fr auto !important;
+  align-items: center !important;
+  gap: 28px !important;
+}
+
+.brandBlock {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+  color: #f8fafc !important;
+  min-width: 250px !important;
+}
+
+.brandLogo {
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 15px !important;
+  display: grid !important;
+  place-items: center !important;
+  background:
+    radial-gradient(circle at 40% 30%, rgba(147, 197, 253, 0.9), transparent 30%),
+    linear-gradient(135deg, rgba(37, 99, 235, 0.28), rgba(34, 197, 94, 0.18)) !important;
+  border: 1px solid rgba(96, 165, 250, 0.25) !important;
+  box-shadow: 0 14px 34px rgba(37, 99, 235, 0.18) !important;
+}
+
+.brandBlock strong {
+  display: block !important;
+  color: #f8fafc !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.brandBlock strong span {
+  color: #60a5fa !important;
+}
+
+.brandBlock p {
+  margin: 6px 0 0 !important;
+  color: #94a3b8 !important;
+  font-size: 13px !important;
+}
+
+.mainNav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+}
+
+.navLink {
+  position: relative !important;
+  min-height: 46px !important;
+  padding: 0 15px !important;
+  border: none !important;
+  border-radius: 13px !important;
+  background: transparent !important;
+  color: #cbd5e1 !important;
+  font-size: 15px !important;
+  font-weight: 850 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+  transition: 0.2s ease !important;
+}
+
+.navLink:hover {
+  color: #f8fafc !important;
+  background: rgba(15, 23, 42, 0.72) !important;
+}
+
+.navLink.active {
+  color: #93c5fd !important;
+  background: rgba(37, 99, 235, 0.16) !important;
+}
+
+.navLink.active::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 14px !important;
+  right: 14px !important;
+  bottom: -20px !important;
+  height: 3px !important;
+  border-radius: 999px !important;
+  background: #2563eb !important;
+  box-shadow: 0 0 18px rgba(37, 99, 235, 0.65) !important;
+}
+
+.dropdownArrow {
+  font-size: 12px !important;
+  margin-left: 5px !important;
+  opacity: 0.85 !important;
+}
+
+/* Главное: меню открывается только через React click */
+.navDropdown {
+  position: relative !important;
+}
+
+.navDropdown:hover .dropdownMenu {
+  display: none !important;
+}
+
+.clickDropdown .dropdownMenu {
+  display: grid !important;
+}
+
+.countryDropdownMenu {
+  position: absolute !important;
+  top: calc(100% + 14px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 9999 !important;
+  width: 420px !important;
+  padding: 18px !important;
+  border-radius: 22px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(226, 232, 240, 0.95) !important;
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.34),
+    0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+}
+
+.countryDropdownMenu a,
+.countryDropdownMenu .dropdownDisabled {
+  min-height: 72px !important;
+  padding: 14px !important;
+  border-radius: 16px !important;
+  background: #f8fafc !important;
+  display: grid !important;
+  grid-template-columns: 42px 1fr auto !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+  color: #0f172a !important;
+  transition: 0.18s ease !important;
+}
+
+.countryDropdownMenu a:hover {
+  background: #eef6ff !important;
+  transform: translateY(-1px) !important;
+}
+
+.dropdownCountryIcon {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  display: grid !important;
+  place-items: center !important;
+  color: #0f172a !important;
+  font-size: 12px !important;
+  font-weight: 950 !important;
+}
+
+.countryDropdownMenu strong {
+  display: block !important;
+  color: #0f172a !important;
+  font-size: 16px !important;
+  font-weight: 950 !important;
+}
+
+.countryDropdownMenu span {
+  display: block !important;
+  color: #64748b !important;
+  font-size: 13px !important;
+  margin-top: 2px !important;
+}
+
+.countryDropdownMenu small {
+  color: #64748b !important;
+  font-size: 15px !important;
+}
+
+.dropdownDisabled {
+  opacity: 0.55 !important;
+  cursor: not-allowed !important;
+}
+
+.headerActions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.searchIconButton {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 15px !important;
+  border: 1px solid rgba(148, 163, 184, 0.16) !important;
+  background: rgba(15, 23, 42, 0.74) !important;
+  color: #e2e8f0 !important;
+  display: grid !important;
+  place-items: center !important;
+  cursor: pointer !important;
+  font-size: 18px !important;
+}
+
+.headerPrimaryButton {
+  height: 48px !important;
+  padding: 0 22px !important;
+  border-radius: 14px !important;
+  background: #2563eb !important;
+  color: white !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 900 !important;
+  box-shadow: 0 18px 45px rgba(37, 99, 235, 0.28) !important;
+}
+
+.headerPrimaryButton:hover {
+  background: #1d4ed8 !important;
+}
+
+/* чтобы старый sidebar точно не мешал, если остался */
+aside {
+  display: none !important;
+}
+
+/* адаптив */
+@media (max-width: 1100px) {
+  .headerInner {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .brandBlock {
+    min-width: 0 !important;
+  }
+
+  .mainNav {
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    padding-bottom: 4px !important;
+  }
+
+  .headerActions {
+    display: none !important;
+  }
+
+  .countryDropdownMenu {
+    left: 0 !important;
+    transform: none !important;
+    width: 360px !important;
+  }
+}
+/* =========================
+   HEADER FIX — STABLE CLICK DROPDOWN
+========================= */
+
+.siteHeader {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 900 !important;
+  width: 100% !important;
+  background: rgba(2, 6, 23, 0.92) !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1) !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+.headerInner {
+  width: min(100%, 1380px) !important;
+  margin: 0 auto !important;
+  padding: 16px 28px !important;
+  display: grid !important;
+  grid-template-columns: auto 1fr auto !important;
+  align-items: center !important;
+  gap: 24px !important;
+}
+
+.brandBlock {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+  color: #f8fafc !important;
+  min-width: 250px !important;
+}
+
+.brandLogo {
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 15px !important;
+  display: grid !important;
+  place-items: center !important;
+  background:
+    radial-gradient(circle at 40% 30%, rgba(147, 197, 253, 0.9), transparent 30%),
+    linear-gradient(135deg, rgba(37, 99, 235, 0.28), rgba(34, 197, 94, 0.18)) !important;
+  border: 1px solid rgba(96, 165, 250, 0.25) !important;
+}
+
+.brandBlock strong {
+  display: block !important;
+  color: #f8fafc !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.brandBlock strong span {
+  color: #60a5fa !important;
+}
+
+.brandBlock p {
+  margin: 6px 0 0 !important;
+  color: #94a3b8 !important;
+  font-size: 13px !important;
+}
+
+.mainNav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+}
+
+.navLink {
+  position: relative !important;
+  min-height: 44px !important;
+  padding: 0 13px !important;
+  border: none !important;
+  border-radius: 13px !important;
+  background: transparent !important;
+  color: #cbd5e1 !important;
+  font-size: 15px !important;
+  font-weight: 850 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+  white-space: nowrap !important;
+  transition: 0.18s ease !important;
+}
+
+.navLink:hover {
+  color: #f8fafc !important;
+  background: rgba(15, 23, 42, 0.72) !important;
+}
+
+.navLink.active {
+  color: #93c5fd !important;
+  background: rgba(37, 99, 235, 0.16) !important;
+}
+
+/* убираем большую синюю полоску снизу, она мешала */
+.navLink.active::after {
+  display: none !important;
+}
+
+.dropdownArrow {
+  font-size: 12px !important;
+  margin-left: 6px !important;
+  opacity: 0.85 !important;
+}
+
+.navDropdown {
+  position: relative !important;
+}
+
+/* главное: никакого hover-открытия */
+.navDropdown:hover .countryDropdownMenu,
+.navDropdown:hover .dropdownMenu {
+  display: none !important;
+}
+
+/* меню показывается только потому что React его добавил после click */
+.navDropdown .countryDropdownMenu {
+  display: grid !important;
+}
+
+.countryDropdownMenu {
+  position: absolute !important;
+  top: calc(100% + 10px) !important;
+  left: 0 !important;
+  z-index: 9999 !important;
+  width: 360px !important;
+  padding: 14px !important;
+  border-radius: 20px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(226, 232, 240, 0.95) !important;
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.32),
+    0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 10px !important;
+}
+
+.countryDropdownMenu a,
+.countryDropdownMenu .dropdownDisabled {
+  min-height: 66px !important;
+  padding: 12px !important;
+  border-radius: 15px !important;
+  background: #f8fafc !important;
+  display: grid !important;
+  grid-template-columns: 38px 1fr auto !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  color: #0f172a !important;
+  transition: 0.18s ease !important;
+}
+
+.countryDropdownMenu a:hover {
+  background: #eef6ff !important;
+  transform: translateY(-1px) !important;
+}
+
+.dropdownCountryIcon {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 11px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  display: grid !important;
+  place-items: center !important;
+  color: #0f172a !important;
+  font-size: 12px !important;
+  font-weight: 950 !important;
+}
+
+.countryDropdownMenu strong {
+  display: block !important;
+  color: #0f172a !important;
+  font-size: 15px !important;
+  font-weight: 950 !important;
+}
+
+.countryDropdownMenu span {
+  display: block !important;
+  color: #64748b !important;
+  font-size: 12px !important;
+  margin-top: 2px !important;
+}
+
+.countryDropdownMenu small {
+  color: #64748b !important;
+  font-size: 14px !important;
+}
+
+.dropdownDisabled {
+  opacity: 0.55 !important;
+  cursor: not-allowed !important;
+}
+
+.headerSearchButton {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 15px !important;
+  border: 1px solid rgba(148, 163, 184, 0.16) !important;
+  background: rgba(15, 23, 42, 0.74) !important;
+  color: #e2e8f0 !important;
+  text-decoration: none !important;
+  display: grid !important;
+  place-items: center !important;
+  font-size: 18px !important;
+  flex-shrink: 0 !important;
+}
+
+/* полностью убираем старую большую кнопку справа, если она осталась */
+.headerPrimaryButton {
+  display: none !important;
+}
+
+/* старый sidebar не нужен */
+aside {
+  display: none !important;
+}
+
+@media (max-width: 1150px) {
+  .headerInner {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .brandBlock {
+    min-width: 0 !important;
+  }
+
+  .mainNav {
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    padding-bottom: 4px !important;
+  }
+
+  .headerSearchButton {
+    display: none !important;
+  }
+
+  .countryDropdownMenu {
+    left: 0 !important;
+    width: 330px !important;
+  }
+}
+/* =========================
+   DISABLE BROKEN DROPDOWN COMPLETELY
+========================= */
+
+.countryDropdownMenu,
+.dropdownMenu,
+.dropdownDisabled,
+.dropdownCountryIcon,
+.dropdownArrow {
+  display: none !important;
+}
+
+.navDropdown {
+  display: contents !important;
+}
+
+/* =========================
+   CLEAN HEADER FINAL
+========================= */
+
+.siteHeader {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 900 !important;
+  width: 100% !important;
+  background: rgba(2, 6, 23, 0.94) !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1) !important;
+  backdrop-filter: blur(18px) !important;
+}
+
+.headerInner {
+  width: min(100%, 1380px) !important;
+  margin: 0 auto !important;
+  padding: 16px 28px !important;
+  display: grid !important;
+  grid-template-columns: auto 1fr auto !important;
+  align-items: center !important;
+  gap: 24px !important;
+}
+
+.brandBlock {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+  color: #f8fafc !important;
+  min-width: 250px !important;
+}
+
+.brandLogo {
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 15px !important;
+  display: grid !important;
+  place-items: center !important;
+  background:
+    radial-gradient(circle at 40% 30%, rgba(147, 197, 253, 0.9), transparent 30%),
+    linear-gradient(135deg, rgba(37, 99, 235, 0.28), rgba(34, 197, 94, 0.18)) !important;
+  border: 1px solid rgba(96, 165, 250, 0.25) !important;
+}
+
+.brandBlock strong {
+  display: block !important;
+  color: #f8fafc !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.brandBlock strong span {
+  color: #60a5fa !important;
+}
+
+.brandBlock p {
+  margin: 6px 0 0 !important;
+  color: #94a3b8 !important;
+  font-size: 13px !important;
+}
+
+.mainNav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+}
+
+.navLink {
+  position: relative !important;
+  min-height: 44px !important;
+  padding: 0 14px !important;
+  border: none !important;
+  border-radius: 13px !important;
+  background: transparent !important;
+  color: #cbd5e1 !important;
+  font-size: 15px !important;
+  font-weight: 850 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+  white-space: nowrap !important;
+  transition: 0.18s ease !important;
+}
+
+.navLink:hover {
+  color: #f8fafc !important;
+  background: rgba(15, 23, 42, 0.72) !important;
+}
+
+.navLink.active {
+  color: #93c5fd !important;
+  background: rgba(37, 99, 235, 0.16) !important;
+}
+
+.navLink.active::after {
+  display: none !important;
+}
+
+.headerSearchButton {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 15px !important;
+  border: 1px solid rgba(148, 163, 184, 0.16) !important;
+  background: rgba(15, 23, 42, 0.74) !important;
+  color: #e2e8f0 !important;
+  text-decoration: none !important;
+  display: grid !important;
+  place-items: center !important;
+  font-size: 18px !important;
+  flex-shrink: 0 !important;
+}
+
+.headerPrimaryButton {
+  display: none !important;
+}
+
+aside {
+  display: none !important;
+}
+
+@media (max-width: 1150px) {
+  .headerInner {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .brandBlock {
+    min-width: 0 !important;
+  }
+
+  .mainNav {
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    padding-bottom: 4px !important;
+  }
+
+  .headerSearchButton {
+    display: none !important;
+  }
+}
+/* =========================
+   COUNTRIES PAGE
+========================= */
+
+.countriesPage {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+
+.countriesHero {
+  margin-bottom: 36px;
+}
+
+.countriesEyebrow {
+  color: #66a3ff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.countriesHero h1 {
+  font-size: 54px;
+  line-height: 1;
+  margin: 0 0 16px;
+  color: #ffffff;
+}
+
+.countriesText {
+  max-width: 760px;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #9eb3d8;
+  margin: 0;
+}
+
+.countriesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.countryCard {
+  display: block;
+  text-decoration: none;
+  background: linear-gradient(180deg, rgba(11, 20, 48, 0.95), rgba(8, 15, 36, 0.98));
+  border: 1px solid rgba(90, 120, 255, 0.18);
+  border-radius: 28px;
+  padding: 28px;
+  min-height: 240px;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.countryCard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(95, 140, 255, 0.45);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+}
+
+.countryCard.locked {
+  opacity: 0.72;
+  cursor: default;
+}
+
+.countryCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.countryFlag {
+  font-size: 38px;
+  line-height: 1;
+}
+
+.countryStatus {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+
+.countryStatus.available {
+  background: rgba(58, 107, 255, 0.18);
+  color: #8eb1ff;
+  border: 1px solid rgba(95, 140, 255, 0.25);
+}
+
+.countryStatus.locked {
+  background: rgba(255, 255, 255, 0.06);
+  color: #9aa8c7;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.countryCard h2 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 32px;
+}
+
+.countryCard p {
+  margin: 0;
+  color: #9eb3d8;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.countryCardArrow {
+  margin-top: 24px;
+  color: #79a6ff;
+  font-weight: 700;
+}
+
+.lockedText {
+  color: #8797b7;
+}
+
+/* =========================
+   COUNTRY PAGE
+========================= */
+
+.countryPage {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 56px 24px 80px;
+}
+
+.countryHeroPage {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  margin-bottom: 30px;
+}
+
+.countryHeroLeft,
+.countryHeroRight,
+.countryNavSection,
+.countryInfoCard {
+  background: linear-gradient(180deg, rgba(11, 20, 48, 0.95), rgba(8, 15, 36, 0.98));
+  border: 1px solid rgba(90, 120, 255, 0.16);
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.countryHeroLeft {
+  padding: 32px;
+}
+
+.countryHeroRight {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.countryTopBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(58, 107, 255, 0.14);
+  border: 1px solid rgba(95, 140, 255, 0.22);
+  color: #8eb1ff;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.countryHeroLeft h1 {
+  font-size: 54px;
+  line-height: 1;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+
+.countryHeroText {
+  color: #9eb3d8;
+  line-height: 1.8;
+  font-size: 17px;
+  margin: 0 0 26px;
+}
+
+.countryStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.countryStatCard {
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(95, 140, 255, 0.12);
+}
+
+.countryStatCard span {
+  display: block;
+  color: #8ea1c8;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.countryStatCard strong {
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.countryPresentationCard {
+  width: 100%;
+  min-height: 100%;
+  border-radius: 24px;
+  padding: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(74, 120, 255, 0.22), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(39, 208, 142, 0.12), transparent 35%),
+    rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(95, 140, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.countryPresentationFlag {
+  font-size: 56px;
+  margin-bottom: 14px;
+}
+
+.countryPresentationCard h2 {
+  margin: 0 0 12px;
+  font-size: 34px;
+  color: #ffffff;
+}
+
+.countryPresentationCard p {
+  margin: 0;
+  color: #9eb3d8;
+  line-height: 1.8;
+}
+
+.countryNavSection {
+  padding: 28px;
+  margin-bottom: 28px;
+}
+
+.countryNavHeader h2 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.countryNavHeader p {
+  margin: 0 0 20px;
+  color: #9eb3d8;
+  line-height: 1.7;
+}
+
+.countryQuickNav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.countryQuickNavItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  min-height: 72px;
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(95, 140, 255, 0.16);
+  color: #ffffff;
+  font-weight: 700;
+  transition: 0.25s ease;
+}
+
+.countryQuickNavItem:hover {
+  transform: translateY(-2px);
+  border-color: rgba(95, 140, 255, 0.36);
+  color: #8eb1ff;
+}
+
+.countryQuickNavItem.disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.countryInfoSection {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.countryInfoCard {
+  padding: 28px;
+}
+
+.countryInfoCard h3 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 28px;
+}
+
+.countryInfoCard p {
+  margin: 0;
+  color: #9eb3d8;
+  line-height: 1.8;
+}
+
+.countryHighlightsList {
+  padding-left: 20px;
+  margin: 0;
+  color: #c6d3ee;
+  line-height: 1.8;
+}
+
+.countryHighlightsList li + li {
+  margin-top: 8px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 980px) {
+  .countriesGrid,
+  .countryInfoSection,
+  .countryHeroPage,
+  .countryQuickNav {
+    grid-template-columns: 1fr;
+  }
+
+  .countryStats {
+    grid-template-columns: 1fr;
+  }
+
+  .countriesHero h1,
+  .countryHeroLeft h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .countriesPage,
+  .countryPage {
+    padding: 32px 16px 56px;
+  }
+
+  .countriesHero h1,
+  .countryHeroLeft h1 {
+    font-size: 34px;
+  }
+
+  .countryCard h2 {
+    font-size: 26px;
+  }
+}
+/* =========================
+   ITALY COUNTRY PAGE
+========================= */
+
+.italyPage {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 56px 24px 90px;
+}
+
+.italyHero {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.italyHeroText {
+  padding: 34px 0;
+}
+
+.pageEyebrow {
+  margin: 0 0 14px;
+  color: #60a5fa;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.italyHeroText h1 {
+  margin: 0 0 20px;
+  color: #f8fafc;
+  font-size: 58px;
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.italyHeroText p {
+  max-width: 620px;
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.italyHeroActions {
+  display: flex;
+  gap: 14px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.secondaryButton {
+  min-height: 54px;
+  padding: 0 22px;
+  border-radius: 16px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: rgba(15, 23, 42, 0.72);
+  color: #f8fafc;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.italyHeroVisual {
+  position: relative;
+  min-height: 420px;
+  border-radius: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(15, 23, 42, 0.72);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+}
+
+.italyHeroVisual img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+  display: block;
+  opacity: 0.78;
+  filter: saturate(1.08) contrast(1.05);
+}
+
+.italyHeroVisual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.04), rgba(2, 6, 23, 0.58)),
+    radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.16), transparent 40%);
+}
+
+.italyHeroBadge {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: rgba(2, 6, 23, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: #f8fafc;
+  backdrop-filter: blur(14px);
+}
+
+.italyHeroBadge span {
+  font-size: 24px;
+}
+
+.italyQuickLinks {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.italyQuickLinks a {
+  min-height: 118px;
+  padding: 22px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.14), transparent 38%),
+    rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  text-decoration: none;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: 0.22s ease;
+}
+
+.italyQuickLinks a:hover {
+  transform: translateY(-4px);
+  border-color: rgba(96, 165, 250, 0.44);
+}
+
+.italyQuickLinks span {
+  width: 46px;
+  height: 46px;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
+  background: rgba(37, 99, 235, 0.18);
+  font-size: 22px;
+}
+
+.italyQuickLinks strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.italyQuickLinks p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.italyIntroGrid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.italyIntroCard {
+  padding: 30px;
+  border-radius: 28px;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.italyIntroCard h2 {
+  margin: 0 0 16px;
+  color: #f8fafc;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.italyIntroCard p {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.8;
+}
+
+.italyPhotoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.italyPhotoGrid img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  opacity: 0.88;
+}
+
+.italyPhotoGrid img:first-child {
+  grid-row: span 2;
+  height: 394px;
+}
+
+.italyHighlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.italyHighlights article {
+  padding: 26px;
+  border-radius: 26px;
+  background: rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.italyHighlights h3 {
+  margin: 0 0 12px;
+  color: #f8fafc;
+  font-size: 22px;
+}
+
+.italyHighlights p {
+  margin: 0;
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+.italyRoadPreview {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 24px;
+  padding: 30px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(37, 99, 235, 0.16), transparent 36%),
+    rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  margin-bottom: 30px;
+}
+
+.italyRoadPreview h2 {
+  margin: 0 0 14px;
+  color: #f8fafc;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.italyRoadPreview p {
+  margin: 0;
+  color: #94a3b8;
+  line-height: 1.8;
+}
+
+.italySteps {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.italyStep {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.34);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.italyStep span {
+  width: 38px;
+  height: 38px;
+  border-radius: 13px;
+  background: rgba(37, 99, 235, 0.18);
+  color: #93c5fd;
+  display: grid;
+  place-items: center;
+  font-weight: 950;
+}
+
+.italyStep p {
+  color: #f8fafc;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.italyScholarshipBanner {
+  padding: 28px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 90% 20%, rgba(34, 197, 94, 0.22), transparent 32%),
+    rgba(5, 46, 22, 0.72);
+  border: 1px solid rgba(34, 197, 94, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
+
+.italyScholarshipBanner p {
+  margin: 0 0 8px;
+  color: #86efac;
+  font-weight: 900;
+}
+
+.italyScholarshipBanner h2 {
+  margin: 0 0 8px;
+  color: #f0fdf4;
+  font-size: 30px;
+  letter-spacing: -0.04em;
+}
+
+.italyScholarshipBanner span {
+  color: #bbf7d0;
+}
+
+.italyScholarshipBanner a {
+  color: #f0fdf4;
+  text-decoration: none;
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+/* responsive */
+
+@media (max-width: 1050px) {
+  .italyHero,
+  .italyIntroGrid,
+  .italyRoadPreview {
+    grid-template-columns: 1fr;
+  }
+
+  .italyQuickLinks,
+  .italyHighlights {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .italyPage {
+    padding: 34px 16px 70px;
+  }
+
+  .italyHeroText h1 {
+    font-size: 40px;
+  }
+
+  .italyQuickLinks,
+  .italyHighlights,
+  .italySteps {
+    grid-template-columns: 1fr;
+  }
+
+  .italyPhotoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .italyPhotoGrid img,
+  .italyPhotoGrid img:first-child {
+    height: 220px;
+  }
+
+  .italyScholarshipBanner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* =========================
+   ITALY PRESENTATION PAGE
+========================= */
+
+.italyPresentationPage {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 56px 24px 90px;
+}
+
+.italyPresentationHero {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 38px;
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.italyPresentationText h1 {
+  margin: 0 0 22px;
+  color: #f8fafc;
+  font-size: 58px;
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.italyPresentationText p:not(.pageEyebrow) {
+  max-width: 650px;
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 19px;
+  line-height: 1.75;
+}
+
+.italyPresentationImage {
+  position: relative;
+  min-height: 430px;
+  border-radius: 34px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background: rgba(15, 23, 42, 0.72);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.28);
+}
+
+.italyPresentationImage img {
+  width: 100%;
+  height: 100%;
+  min-height: 430px;
+  object-fit: cover;
+  display: block;
+  opacity: 0.82;
+  filter: saturate(1.08) contrast(1.04);
+}
+
+.italyPresentationImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.02), rgba(2, 6, 23, 0.56)),
+    radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.14), transparent 42%);
+}
+
+.italyFloatingBadge {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: rgba(2, 6, 23, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: #f8fafc;
+  backdrop-filter: blur(14px);
+}
+
+.italyFloatingBadge span {
+  font-size: 24px;
+}
+
+.italyFloatingBadge strong {
+  display: block;
+  font-size: 16px;
+}
+
+.italyFloatingBadge p {
+  margin: 2px 0 0;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.pageEyebrow {
+  margin: 0 0 14px;
+  color: #60a5fa;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.italyMoodSection {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.italyMoodText {
+  padding: 30px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.14), transparent 38%),
+    rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.italyMoodText h2 {
+  margin: 0 0 16px;
+  color: #f8fafc;
+  font-size: 36px;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.italyMoodText p:not(.pageEyebrow) {
+  margin: 0;
+  color: #cbd5e1;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.italyMoodPhotos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.italyMoodPhotos img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  opacity: 0.9;
+}
+
+.italyMoodPhotos img:first-child {
+  grid-row: span 2;
+  height: 394px;
+}
+
+.italyFeatureGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.italyFeatureCard {
+  padding: 24px;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(37, 99, 235, 0.12), transparent 36%),
+    rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.italyFeatureCard h3 {
+  margin: 0 0 12px;
+  color: #f8fafc;
+  font-size: 21px;
+  letter-spacing: -0.03em;
+}
+
+.italyFeatureCard p {
+  margin: 0;
+  color: #94a3b8;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.italyStudentLife {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.italyStudentLifeImage {
+  min-height: 440px;
+  border-radius: 30px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: rgba(15, 23, 42, 0.78);
+}
+
+.italyStudentLifeImage img {
+  width: 100%;
+  height: 100%;
+  min-height: 440px;
+  object-fit: cover;
+  display: block;
+  opacity: 0.9;
+}
+
+.italyStudentLifeText {
+  padding: 30px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(34, 197, 94, 0.12), transparent 36%),
+    rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.italyStudentLifeText h2 {
+  margin: 0 0 16px;
+  color: #f8fafc;
+  font-size: 36px;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.italyStudentLifeText > p:not(.pageEyebrow) {
+  margin: 0 0 22px;
+  color: #cbd5e1;
+  line-height: 1.8;
+}
+
+.studentNotesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.studentNote {
+  display: flex;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.34);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.studentNote span {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  background: rgba(34, 197, 94, 0.16);
+  color: #86efac;
+  font-weight: 900;
+}
+
+.studentNote p {
+  margin: 0;
+  color: #e2e8f0;
+  line-height: 1.45;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.italyRegionsSection {
+  padding: 30px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 80% 0%, rgba(37, 99, 235, 0.16), transparent 36%),
+    rgba(15, 23, 42, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.italyRegionsSection h2 {
+  margin: 0 0 22px;
+  color: #f8fafc;
+  font-size: 38px;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.italyRegionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.italyRegionsGrid article {
+  padding: 22px;
+  border-radius: 22px;
+  background: rgba(2, 6, 23, 0.34);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.italyRegionsGrid h3 {
+  margin: 0 0 10px;
+  color: #f8fafc;
+  font-size: 21px;
+}
+
+.italyRegionsGrid p {
+  margin: 0;
+  color: #94a3b8;
+  line-height: 1.7;
+}
+
+/* responsive */
+
+@media (max-width: 1050px) {
+  .italyPresentationHero,
+  .italyMoodSection,
+  .italyStudentLife {
+    grid-template-columns: 1fr;
+  }
+
+  .italyFeatureGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .italyRegionsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .italyPresentationPage {
+    padding: 34px 16px 70px;
+  }
+
+  .italyPresentationText h1 {
+    font-size: 40px;
+  }
+
+  .italyMoodText h2,
+  .italyStudentLifeText h2,
+  .italyRegionsSection h2 {
+    font-size: 30px;
+  }
+
+  .italyFeatureGrid,
+  .studentNotesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .italyMoodPhotos {
+    grid-template-columns: 1fr;
+  }
+
+  .italyMoodPhotos img,
+  .italyMoodPhotos img:first-child {
+    height: 220px;
+  }
+}

@@ -1,0 +1,326 @@
+/* =========================
+   START PAGE
+========================= */
+
+.startPage {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 56px 0 86px;
+  color: #f8fafc;
+}
+
+.startHero {
+  max-width: 980px;
+  margin-bottom: 30px;
+}
+
+.startHero h1 {
+  margin: 16px 0 14px;
+  color: #ffffff;
+  font-size: clamp(42px, 5.5vw, 68px);
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.startHero p {
+  max-width: 860px;
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.startFilters {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+  padding: 22px;
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.12), transparent 36%),
+    rgba(15, 23, 42, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.startFilters label {
+  display: block;
+}
+
+.startFilters span {
+  display: block;
+  margin-bottom: 8px;
+  color: #cbd5e1;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.startFilters select {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.22);
+  background: #020617;
+  color: #f8fafc;
+  font-size: 15px;
+  outline: none;
+}
+
+.startFilters option {
+  background: #020617;
+  color: #f8fafc;
+}
+
+.startResultsTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.startResultsTop h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 28px;
+  letter-spacing: -0.04em;
+}
+
+.startResultsTop p {
+  margin: 8px 0 0;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+
+.startResultsTop strong {
+  flex: 0 0 auto;
+  color: #93c5fd;
+  font-size: 16px;
+}
+
+.startProgramList {
+  display: grid;
+  gap: 18px;
+}
+
+.startProgramCard {
+  padding: 24px;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 32%),
+    rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.22);
+}
+
+.startProgramLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(290px, 0.75fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.startProgramMain {
+  min-width: 0;
+}
+
+.startProgramMeta {
+  margin: 0 0 12px;
+  color: #60a5fa;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.startProgramCard h3 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-size: 27px;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.startProgramInfo {
+  display: grid;
+  gap: 8px;
+  color: #d1d5db;
+}
+
+.startProgramInfo p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.startRequirements {
+  margin-top: 18px;
+}
+
+.startRequirements h4 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.startRequirements ul,
+.startScholarshipDocs ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #d1d5db;
+  line-height: 1.7;
+}
+
+.startOfficialLink {
+  display: inline-flex;
+  margin-top: 16px;
+  color: #93c5fd;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.startOfficialLink:hover {
+  color: #bfdbfe;
+}
+
+.startScholarshipBox {
+  padding: 20px;
+  border-radius: 22px;
+  background: rgba(2, 6, 23, 0.62);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.startScholarshipLabel {
+  margin: 0 0 12px;
+  color: #22c55e;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.startScholarshipBox h4 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: 23px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.startScholarshipAmount {
+  margin-bottom: 16px;
+  padding: 14px;
+  border-radius: 16px;
+  background: rgba(5, 46, 22, 0.9);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+}
+
+.startScholarshipAmount strong {
+  display: block;
+  color: #86efac;
+  font-size: 15px;
+}
+
+.startScholarshipAmount span {
+  display: block;
+  margin-top: 6px;
+  color: #bbf7d0;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.startScholarshipDocs h5 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.startEmptyState {
+  padding: 24px;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.86);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.startEmptyState h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+}
+
+.startEmptyState p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+/* START MOBILE */
+@media (max-width: 900px) {
+  .startFilters {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .startProgramLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .startPage {
+    width: min(100% - 24px, 1180px);
+    padding: 36px 0 68px;
+  }
+
+  .startHero h1 {
+    font-size: 36px;
+    line-height: 1.05;
+  }
+
+  .startHero p {
+    font-size: 16px;
+  }
+
+  .startFilters {
+    grid-template-columns: 1fr;
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .startResultsTop {
+    display: block;
+  }
+
+  .startResultsTop strong {
+    display: inline-flex;
+    margin-top: 10px;
+  }
+
+  .startProgramCard {
+    padding: 18px;
+    border-radius: 22px;
+    overflow: hidden;
+  }
+
+  .startProgramCard h3 {
+    font-size: 23px;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .startScholarshipBox {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .startScholarshipBox h4 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 430px) {
+  .startPage {
+    width: min(100% - 20px, 1180px);
+  }
+
+  .startHero h1 {
+    font-size: 32px;
+  }
+
+  .startProgramCard {
+    padding: 16px;
+  }
+}

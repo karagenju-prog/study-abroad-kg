@@ -1,0 +1,211 @@
+/* =========================================================
+   MOBILE LAYOUT FIX
+========================================================= */
+
+@media (max-width: 720px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .siteHeader {
+    width: 100%;
+    max-width: 100%;
+    border-bottom-color: rgba(148, 163, 184, 0.1);
+    overflow: visible;
+  }
+
+  .headerInner {
+    width: 100%;
+    max-width: 100%;
+    min-height: 72px;
+    padding: 0 12px;
+    gap: 10px;
+  }
+.headerActions {
+  position: relative;
+  z-index: 3000;
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.mobileMenuButton {
+  position: relative;
+  z-index: 3001;
+  pointer-events: auto;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+  .brandBlock {
+    gap: 10px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .brandLogo {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+  }
+
+  .brandBlock strong {
+    font-size: 17px;
+    white-space: nowrap;
+  }
+
+  .brandBlock p {
+    display: none;
+  }
+
+  .headerSearchButton,
+  .mobileMenuButton {
+    width: 40px;
+    height: 40px;
+    border-radius: 14px;
+  }
+
+ .mobileMenu {
+  top: 78px;
+  right: 10px;
+  width: min(292px, calc(100vw - 20px));
+  padding: 12px;
+  border-radius: 20px;
+}
+
+ .homePage {
+  width: 100%;
+  max-width: 100%;
+  padding: 14px 14px 56px;
+}
+
+ .heroStudentLayout {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  min-height: auto;
+  display: block;
+  padding: 28px 20px 20px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+  .heroBackground,
+  .heroBackgroundImage {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .heroBackgroundImage {
+    height: 100%;
+    min-height: 0;
+    transform: none;
+    object-position: center bottom;
+    opacity: 0.42;
+    filter: brightness(0.65) contrast(1.05);
+  }
+
+  .heroLeft,
+  .heroPathwaySide,
+  .pathwayPanel,
+  .miniScholarship {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .heroCountryBadge {
+    max-width: 100%;
+    margin-bottom: 18px;
+  }
+
+  .heroEyebrow {
+    max-width: 240px;
+    margin-bottom: 18px;
+    font-size: 10px;
+    line-height: 1.35;
+    letter-spacing: 0.13em;
+  }
+
+.heroTitle {
+  width: 100%;
+  max-width: 100%;
+  font-size: clamp(23px, 6.2vw, 28px);
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+}
+
+  .heroText {
+    width: 100%;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .primaryButton {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+    padding: 15px 14px;
+  }
+
+  .heroPathwaySide {
+    margin-top: 22px;
+  }
+
+  .pathwayPanel {
+    padding: 18px;
+  }
+
+  .pathwayPanel h2 {
+    font-size: 22px;
+    line-height: 1.15;
+  }
+
+  .countrySection {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px;
+    overflow: hidden;
+  }
+
+  .countrySectionTop {
+    display: block;
+  }
+
+  .countryNotice {
+    width: 100%;
+    min-width: 0;
+    margin-top: 16px;
+  }
+
+  .countryHomeGrid {
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .countryHomeCard {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .countryHomeTop {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: start;
+  }
+
+  .countryStatus {
+    grid-column: 2;
+    width: max-content;
+    margin-top: 6px;
+  }
+}

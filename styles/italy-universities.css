@@ -1,0 +1,374 @@
+/* =========================
+   ITALY UNIVERSITIES PAGE
+========================= */
+
+.italyUniversitiesPage {
+  background: transparent;
+  color: #f8fafc;
+  padding: 64px 0 90px;
+  min-height: 100vh;
+}
+
+.universitiesHero,
+.universitiesNotice,
+.universitiesGrid,
+.universitiesBottomCta {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+/* HERO */
+
+.universitiesHero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 28px;
+  align-items: stretch;
+  margin-bottom: 34px;
+}
+
+.universitiesHero h1 {
+  margin: 0;
+  font-size: clamp(44px, 6vw, 76px);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  color: #ffffff;
+}
+
+.universitiesHero p {
+  max-width: 820px;
+  margin: 24px 0 0;
+  color: #cbd5e1;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.universitiesHeroCard {
+  padding: 28px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 38%),
+    rgba(15, 23, 42, 0.88);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.22);
+}
+
+.universitiesHeroCard span {
+  font-size: 34px;
+}
+
+.universitiesHeroCard h2 {
+  margin: 18px 0 0;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.universitiesHeroCard p {
+  margin: 14px 0 0;
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* NOTICE */
+
+.universitiesNotice {
+  margin-bottom: 34px;
+  padding: 24px 28px;
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at top left, rgba(34, 197, 94, 0.1), transparent 34%),
+    rgba(15, 23, 42, 0.82);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.18);
+}
+
+.universitiesNotice strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #86efac;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.universitiesNotice p {
+  max-width: 900px;
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* GRID */
+
+.universitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* CARD */
+
+.universityCard {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.11), transparent 34%),
+    rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.22);
+  transition: 0.2s ease;
+}
+
+.universityCard:hover {
+  transform: translateY(-3px);
+  border-color: rgba(96, 165, 250, 0.28);
+  box-shadow:
+    0 24px 58px rgba(0, 0, 0, 0.28),
+    0 0 42px rgba(59, 130, 246, 0.06);
+}
+
+/* CARD HEADER */
+
+.universityHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.universityLogo {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.35), transparent 28%),
+    linear-gradient(135deg, #60a5fa 0%, #2563eb 45%, #1d4ed8 100%);
+
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+
+  border: 1px solid rgba(147, 197, 253, 0.35);
+  box-shadow:
+    0 18px 38px rgba(37, 99, 235, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.universityHeaderText {
+  min-width: 0;
+}
+
+.universityType {
+  margin: 0 0 10px;
+  color: #60a5fa;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.universityHeaderText h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 31px;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.universityCity {
+  margin: 10px 0 0;
+  color: #cbd5e1;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* TAGS */
+
+.universityTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.universityTags span {
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: rgba(96, 165, 250, 0.08);
+  border: 1px solid rgba(96, 165, 250, 0.14);
+  color: #bfdbfe;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* INFO BLOCKS */
+
+.universityInfoBlock {
+  display: grid;
+  gap: 14px;
+}
+
+.universityInfoRow {
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(2, 6, 23, 0.34);
+  border: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.universityInfoRow span {
+  display: block;
+  margin-bottom: 8px;
+  color: #93c5fd;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.universityInfoRow p {
+  margin: 0;
+  color: #e2e8f0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ACTION */
+
+.universityActions {
+  margin-top: 22px;
+  padding-top: 4px;
+}
+
+.universityActions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  color: #93c5fd;
+  text-decoration: none;
+  font-weight: 900;
+  transition: 0.2s ease;
+}
+
+.universityActions a:hover {
+  transform: translateY(-2px);
+  background: rgba(59, 130, 246, 0.18);
+  color: #dbeafe;
+}
+
+/* BOTTOM CTA */
+
+.universitiesBottomCta {
+  margin-top: 46px;
+  padding: 42px;
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.22), transparent 34%),
+    rgba(15, 23, 42, 0.94);
+  border: 1px solid rgba(96, 165, 250, 0.18);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 28px;
+  align-items: center;
+}
+
+.universitiesBottomCta h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(30px, 4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.universitiesBottomCta p {
+  max-width: 760px;
+  margin: 16px 0 0;
+  color: #cbd5e1;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.universitiesBottomCta a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  padding: 16px 24px;
+  border-radius: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 900;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 18px 34px rgba(22, 163, 74, 0.22);
+  transition: 0.2s ease;
+}
+
+.universitiesBottomCta a:hover {
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 980px) {
+  .universitiesHero,
+  .universitiesBottomCta {
+    grid-template-columns: 1fr;
+  }
+
+  .universitiesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .italyUniversitiesPage {
+    padding-top: 42px;
+  }
+
+  .universitiesHero h1 {
+    font-size: 44px;
+  }
+
+  .universitiesHero p {
+    font-size: 16px;
+  }
+
+  .universitiesHeroCard,
+  .universitiesBottomCta,
+  .universityCard {
+    padding: 24px;
+  }
+
+  .universityHeader {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .universityHeaderText h2 {
+    font-size: 27px;
+  }
+
+  .universityInfoRow p {
+    font-size: 14px;
+  }
+
+  .universitiesBottomCta a {
+    width: 100%;
+  }
+}

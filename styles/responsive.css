@@ -1,0 +1,157 @@
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1250px) {
+  .heroStudentLayout {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .heroCenterVisual {
+    min-height: 460px;
+  }
+
+  .heroCenterImage {
+    width: 520px;
+    height: 520px;
+  }
+
+  .countryHeroPage,
+  .italyPresentationHero,
+  .italyMoodSection,
+  .italyStudentLife {
+    grid-template-columns: 1fr;
+  }
+
+  .countriesGrid,
+  .italyFeatureGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .countryQuickNav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1180px) {
+  .mainNav {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: grid;
+}
+
+  .headerInner {
+    justify-content: space-between;
+  }
+
+  .countryTabs,
+  .logoUniversityGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .countrySectionTop,
+  .countryNavHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .countryNotice {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .countryInfoSection {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  body > main:not(.homePage),
+  .startPage {
+    padding: 34px 18px 56px;
+  }
+
+  main h1 {
+    font-size: 38px;
+  }
+
+  .headerInner {
+    min-height: 74px;
+    padding: 0 18px;
+  }
+
+  .brandLogo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .brandBlock strong {
+    font-size: 19px;
+  }
+
+  .brandBlock p {
+    display: none;
+  }
+
+  .headerSearchButton {
+    width: 44px;
+    height: 44px;
+  }
+
+  .heroCenterVisual {
+    min-height: 360px;
+  }
+
+  .heroCenterImage {
+    width: 360px;
+    height: 360px;
+  }
+
+  .pathwayPanel {
+    padding: 20px;
+  }
+
+  .pathwayPanel h2 {
+    font-size: 24px;
+  }
+
+  .countrySection {
+    padding: 20px;
+  }
+
+  .countryTabs,
+  .logoUniversityGrid,
+  .countriesGrid,
+  .countryStats,
+  .countryQuickNav,
+  .italyFeatureGrid,
+  .italyRegionsGrid,
+  .studentNotesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .countryTab {
+    padding: 0 16px;
+  }
+
+  .universityLogoCard {
+    min-height: 190px;
+  }
+
+  .italyPresentationImage,
+  .italyStudentLifeImage {
+    min-height: 320px;
+    height: 320px;
+  }
+
+  .italyMoodPhotos {
+    grid-template-columns: 1fr;
+  }
+
+  .italyMoodPhotos img:first-child {
+    grid-column: auto;
+  }
+}
