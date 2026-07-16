@@ -16,9 +16,9 @@
 .scholarshipsIntroGrid,
 .scholarshipsGrid,
 .scholarshipsBottomCta {
-  margin-bottom: 24px;
   width: min(1180px, calc(100% - 32px));
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .scholarshipsHero {
@@ -273,6 +273,7 @@
 
 .scholarshipsBottomCta {
   margin-top: 34px;
+  margin-bottom: 24px;
   display: flex;
   justify-content: space-between;
   gap: 28px;
@@ -317,6 +318,7 @@
   }
 
   .scholarshipsBottomCta {
+    margin-bottom: 16px;
     flex-direction: column;
     align-items: flex-start;
   }
