@@ -204,7 +204,7 @@ export default function DocumentsPage() {
     target="_blank"
     rel="noopener noreferrer"
   >
-    Получить поддержку
+    Написать нам
   </a>
 </section>
       </div>

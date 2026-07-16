@@ -197,7 +197,7 @@ export default function ItalyUniversitiesPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Получить поддержку
+          Написать нам
         </a>
       </section>
 

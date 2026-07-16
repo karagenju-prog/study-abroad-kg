@@ -255,7 +255,7 @@ export default function ItalyScholarshipsPage() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Получить поддержку
+          Написать нам
         </a>
       </section>
 
