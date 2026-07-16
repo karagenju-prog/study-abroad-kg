@@ -13,6 +13,7 @@
 .universitiesNotice,
 .universitiesGrid,
 .universitiesBottomCta {
+  margin-bottom: 36px;
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
 }

@@ -16,7 +16,7 @@
 .scholarshipsIntroGrid,
 .scholarshipsGrid,
 .scholarshipsBottomCta {
-  margin-bottom: 36px;
+  margin-bottom: 24px;
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
 }
