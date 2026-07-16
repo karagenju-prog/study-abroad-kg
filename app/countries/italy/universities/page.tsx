@@ -216,11 +216,11 @@ export default function ItalyUniversitiesPage() {
               </div>
             </div>
 
-            <div className="universityActions">
+            {/*<div className="universityActions">
               <a href={uni.website} target="_blank" rel="noopener noreferrer">
                 Официальный сайт →
               </a>
-            </div>
+            </div>*/}
           </article>
         ))}
       </section>
