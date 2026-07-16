@@ -180,6 +180,26 @@ export default function ItalyUniversitiesPage() {
           </p>
         </div>
       </section>
+      
+      <section className="universitiesBottomCta">
+        <div>
+          <p className="pageEyebrow">Следующий шаг</p>
+          <h2>Не знаешь, какой университет выбрать?</h2>
+          <p>
+            Выбирать университет лучше не наугад. Нужно учитывать город,
+            программу, язык обучения, бюджет, стипендию, дедлайны и твой
+            академический профиль.
+          </p>
+        </div>
+
+        <a
+          href="https://wa.me/+393519791937?text=Здравствуйте!%20Мне%20нужна%20помощь%20с%20выбором%20университета%20в%20Италии."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Получить поддержку
+        </a>
+      </section>
 
       <section className="universitiesGrid">
         {universities.map((uni) => (
@@ -225,25 +245,6 @@ export default function ItalyUniversitiesPage() {
         ))}
       </section>
 
-      <section className="universitiesBottomCta">
-        <div>
-          <p className="pageEyebrow">Следующий шаг</p>
-          <h2>Не знаешь, какой университет выбрать?</h2>
-          <p>
-            Выбирать университет лучше не наугад. Нужно учитывать город,
-            программу, язык обучения, бюджет, стипендию, дедлайны и твой
-            академический профиль.
-          </p>
-        </div>
-
-        <a
-          href="https://wa.me/+393519791937?text=Здравствуйте!%20Мне%20нужна%20помощь%20с%20выбором%20университета%20в%20Италии."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Получить поддержку
-        </a>
-      </section>
     </main>
   );
 }
