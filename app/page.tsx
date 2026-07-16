@@ -15,7 +15,7 @@ const countryTabs = [
     label: "Study in Italy",
     shortText:
       "Университеты, документы, стипендии и путь поступления в Италию.",
-    scholarship: "До €8,133 в год",
+    scholarship: "До €10,000 в год",
   },
   {
     id: "germany",
