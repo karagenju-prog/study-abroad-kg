@@ -14,7 +14,7 @@ export default function UnicasPage() {
           искать программы на английском языке и подаваться на Lazio DiSCo.
         </p>
 
-        <a
+        {/*<a
           href="https://www.unicas.it"
           target="_blank"
           style={{
@@ -29,7 +29,7 @@ export default function UnicasPage() {
           }}
         >
           Официальный сайт университета
-        </a>
+        </a>*/}
       </section>
 
       <section

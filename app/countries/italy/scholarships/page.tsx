@@ -18,6 +18,7 @@ const scholarships = [
     ],
     website: "https://laziodisco.it/?lang=en",
   },
+  
   {
     name: "DSU Lombardia",
     region: "Ломбардия",
@@ -280,14 +281,14 @@ export default function ItalyScholarshipsPage() {
               </ul>
             </div>
 
-            <a
+            {/*<a
               className="scholarshipLink"
               href={item.website}
               target="_blank"
               rel="noopener noreferrer"
             >
               Официальный сайт →
-            </a>
+            </a>*/}
           </article>
         ))}
       </section>
