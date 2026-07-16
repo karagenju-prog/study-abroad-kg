@@ -225,10 +225,10 @@ export default function ItalyUniversitiesPage() {
                 <p>{uni.focus}</p>
               </div>
 
-              <div className="universityInfoRow">
+              {/*<div className="universityInfoRow">
                 <span>Стипендия</span>
                 <p>{uni.scholarship}</p>
-              </div>
+              </div>*/}
 
               <div className="universityInfoRow">
                 <span>Кому подходит</span>
