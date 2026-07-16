@@ -237,6 +237,27 @@ export default function ItalyScholarshipsPage() {
           </p>
         </div>
       </section>
+      
+      <section className="scholarshipsBottomCta">
+        
+        <div>
+          <p className="pageEyebrow">Следующий шаг</p>
+          <h2>Не знаешь, какая стипендия подходит?</h2>
+          <p>
+            Стипендия зависит от региона, университета, уровня обучения, доходов
+            семьи, документов и дедлайнов. Лучше заранее понять, куда подаваться
+            и какие документы готовить.
+          </p>
+        </div>
+
+        <a
+          href="https://wa.me/+393519791937?text=Здравствуйте!%20Мне%20нужна%20помощь%20со%20стипендиями%20в%20Италии."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Получить поддержку
+        </a>
+      </section>
 
       <section className="scholarshipsGrid">
         {scholarships.map((item) => (
@@ -293,25 +314,6 @@ export default function ItalyScholarshipsPage() {
         ))}
       </section>
 
-      <section className="scholarshipsBottomCta">
-        <div>
-          <p className="pageEyebrow">Следующий шаг</p>
-          <h2>Не знаешь, какая стипендия подходит?</h2>
-          <p>
-            Стипендия зависит от региона, университета, уровня обучения, доходов
-            семьи, документов и дедлайнов. Лучше заранее понять, куда подаваться
-            и какие документы готовить.
-          </p>
-        </div>
-
-        <a
-          href="https://wa.me/+393519791937?text=Здравствуйте!%20Мне%20нужна%20помощь%20со%20стипендиями%20в%20Италии."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Получить поддержку
-        </a>
-      </section>
     </main>
   );
 }
