@@ -293,23 +293,23 @@ export default function ItalyScholarshipsPage() {
               <p>{item.goodFor}</p>
             </div>
 
-            {/*<div className="scholarshipDocs">
+            <div className="scholarshipDocs">
               <h3>Обычно нужно</h3>
               <ul>
                 {item.usuallyNeeded.map((doc) => (
                   <li key={doc}>{doc}</li>
                 ))}
               </ul>
-            </div>*/}
+            </div>
 
-            {/*<a
+            <a
               className="scholarshipLink"
               href={item.website}
               target="_blank"
               rel="noopener noreferrer"
             >
               Официальный сайт →
-            </a>*/}
+            </a>
           </article>
         ))}
       </section>
