@@ -33,7 +33,7 @@ const universities = [
     goodFor:
       "Один из самых известных университетов Италии. Подходит тем, кто хочет учиться в крупном университете и жить в столице.",
     scholarship: "Lazio DiSCo",
-    website: "https://www.uniroma1.it/en/pagina-strutturale/home",
+    website: "https://www.uniroma1.it/en/",
   },
   {
     short: "TOR",
