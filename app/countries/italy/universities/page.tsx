@@ -21,7 +21,7 @@ const universities = [
     goodFor:
       "Хороший вариант для студентов, которые ищут спокойный город, доступ к Lazio DiSCo и удобное расположение между Римом и Неаполем.",
     scholarship: "Lazio DiSCo",
-    website: "https://www.unicas.it/international-unicas/international-office/",
+    website: "https://unicas-public.gomp.it/PublicData",
   },
   {
     short: "SAP",
