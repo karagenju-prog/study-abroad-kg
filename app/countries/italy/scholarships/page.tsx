@@ -308,7 +308,7 @@ export default function ItalyScholarshipsPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Официальный источники →
+              Официальные источники →
             </a>
           </article>
         ))}
