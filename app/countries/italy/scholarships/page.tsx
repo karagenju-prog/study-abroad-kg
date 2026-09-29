@@ -28,7 +28,7 @@ const scholarships = [
     deadline:
       "Ориентир: обычно июль–август. Важно проверять дедлайн конкретного университета в Ломбардии.",
     goodFor:
-      "Подходит тем, кто поступает в университеты Ломбардии: University of Milan, Politecnico di Milano, Bocconi и другие.",
+      "Подходит тем, кто поступает в университеты Ломбардии: University of Milan, Politecnico di Milano, Bocconi и другие. Подача на стипендию через сам университет.",
     usuallyNeeded: [
       "ISEEUP / ISEE Parificato",
       "Доходы семьи",
@@ -36,7 +36,7 @@ const scholarships = [
       "Недвижимость и имущество",
       "Зачисление или подача в университет",
     ],
-    website: "https://www.dsu.lombardia.it/",
+    website: "https://www.regione.lombardia.it/istruzione-formazione-e-lavoro/universita-e-formazione-accademica/red-diritto-allo-studio-universitario",
   },
   {
     name: "ER.GO",
